@@ -1,8 +1,19 @@
 function FizzBuzz() {
+
     function transform(number) {
-        if (number == 5)
+        if (isFiveMultiple(number))
             return "Buzz";
-        return "Fizz";
+        if (isThreeMultiple(number))
+            return "Fizz";
+        return number.toString();
+    }
+
+    function isThreeMultiple(number) {
+        return number % 3 == 0;
+    }
+
+    function isFiveMultiple(number) {
+        return number % 5 == 0;
     }
 
     return {
