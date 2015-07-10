@@ -1,6 +1,8 @@
 function FizzBuzz() {
 
     function transform(number) {
+        if(isFiveMultiple(number) && isThreeMultiple(number))
+            return "FizzBuzz";
         if (isFiveMultiple(number))
             return "Buzz";
         if (isThreeMultiple(number))

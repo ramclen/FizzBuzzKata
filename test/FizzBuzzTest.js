@@ -26,4 +26,10 @@ function FizzBuzzTest() {
             expect("2").toEqual(FizzBuzz().transform(2));
         });
     });
+
+    describe("Should return FizzBuzz when:", function () {
+        it("is a multiple of five or three", function () {
+            expect("FizzBuzz").toEqual(FizzBuzz().transform(15));
+        });
+    });
 }
