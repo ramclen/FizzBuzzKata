@@ -1,21 +1,22 @@
+define(['src/MultipleCalculator'], function () { return FizzBuzz; })
+
 function FizzBuzz() {
 
+    var multipleDictionary = {
+        '3': "Fizz",
+        '5': "Buzz",
+        '3,5': "FizzBuzz"
+    };
+
     function transform(number) {
-        if(isFiveMultiple(number) && isThreeMultiple(number))
-            return "FizzBuzz";
-        if (isFiveMultiple(number))
-            return "Buzz";
-        if (isThreeMultiple(number))
-            return "Fizz";
-        return number.toString();
+        var multiples = MultipleCalculator([3, 5]).calculate(number);
+        if(noMultiples(multiples))
+            return number.toString();
+        return multipleDictionary[multiples.toString()];
     }
 
-    function isThreeMultiple(number) {
-        return number % 3 == 0;
-    }
-
-    function isFiveMultiple(number) {
-        return number % 5 == 0;
+    function noMultiples(multiples) {
+        return multiples.length == 0;
     }
 
     return {
