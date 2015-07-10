@@ -4,12 +4,12 @@ function MultipleCalculator(multiples) {
         return getMultiples(number, []);
     }
 
-    function getMultiples(number, calculateMultiples) {
+    function getMultiples(number, calculatedMultiples) {
         multiples.forEach(function (multiple) {
             if (isMultiple(multiple, number))
-                calculateMultiples.push(multiple);
+                calculatedMultiples.push(multiple);
         });
-        return calculateMultiples.sort();
+        return calculatedMultiples.sort();
     }
 
     function isMultiple(multiple, number) {
