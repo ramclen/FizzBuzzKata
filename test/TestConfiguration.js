@@ -12,9 +12,9 @@ requirejs(["../Configuration"], function () {
     });
 
     require(['jasmine-boot'], function () {
-        require(['test/FizzBuzzTest']);
+        require(['test/FizzBuzzTest'], function () {
+            window.onload();
+        });
     });
-
-
 });
 
